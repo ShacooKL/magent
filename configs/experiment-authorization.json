@@ -1,0 +1,12 @@
+{
+  "scope": "User-requested magents research experiments using configured APIs",
+  "currency": "CNY",
+  "confirmation_required_above": 20,
+  "rules": [
+    "Do not repeatedly ask for fee approval for an experiment bounded at 20 CNY or less.",
+    "Ask before launching or extending an experiment whose total budget exceeds 20 CNY.",
+    "Do not split one experiment into smaller runs to bypass confirmation.",
+    "Record API usage and estimated cost; stop before exceeding the experiment budget.",
+    "This records user authorization, not an automatically enforced billing limit. Environment permission approvals remain separate."
+  ]
+}

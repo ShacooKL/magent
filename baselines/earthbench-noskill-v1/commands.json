@@ -1,0 +1,14 @@
+{
+  "working_directory": "/srv/user/yangxiao/linzw/Codex/magents",
+  "preflight": "var/envs/earth-agent/bin/python baselines/earthbench-noskill-v1/run.py --task-id 93 --preflight --output var/runs/baseline-v1-q93-check-01",
+  "paid_run": "var/envs/earth-agent/bin/python -u baselines/earthbench-noskill-v1/run.py --task-id 93 --output var/runs/baseline-v1-q93-01",
+  "offline_tests": "PYTHONPATH=baselines/earthbench-noskill-v1/src:baselines/earthbench-noskill-v1/vendor var/envs/earth-agent/bin/python -m unittest discover -s baselines/earthbench-noskill-v1/tests -v",
+  "notes": [
+    "Every output directory must be new and outside this version directory.",
+    "Change task-id to select a question; model, request limits and skill/code permissions are fixed.",
+    "run.py does not expose skill injection, retrieval, learning or schema-override switches.",
+    "Framework modules retained in src/vendor are snapshots, not authorization to run alternative CLI entrypoints as this baseline.",
+    "Keep answers/private host-only; never mount the frozen bundle or its parent as task data.",
+    "Request limits are not a monetary hard cap. Fee approval follows the user's experiment policy; assess batch cost before launch."
+  ]
+}

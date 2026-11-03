@@ -1,0 +1,13 @@
+{
+  "api_config": "../../config/py-agent/config.json",
+  "profile": "dashscope-qwen35-flash",
+  "max_requests": 40,
+  "max_tokens": 4096,
+  "max_role_requests": 12,
+  "max_plan_requests": 4,
+  "downstream_reserve": 6,
+  "review_rounds": 1,
+  "tool_output_chars": 16000,
+  "official_tools": false,
+  "skill_retrieval": true
+}

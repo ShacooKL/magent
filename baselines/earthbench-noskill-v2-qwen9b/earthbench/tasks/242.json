@@ -1,0 +1,5 @@
+{
+  "task_id": "242",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: Based on the following images, determine how many buildings are ruined in the image.\nA. 2\nB. 3\nC. 4\nD. 5"
+}

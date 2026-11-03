@@ -1,0 +1,20 @@
+{
+  "preexisting_ids": [
+    "25",
+    "205",
+    "206",
+    "211",
+    "213",
+    "227",
+    "232",
+    "234",
+    "240",
+    "241",
+    "246"
+  ],
+  "additional_ids": [
+    "121"
+  ],
+  "q121": "Before baseline: reference mean=26.25, current official mean=262.5064697265625; /10 unsupported by explicit band scaling. GT retained, sensitivity exclusion only.",
+  "policy": "Fixed before calls; no outcome-dependent deletions or GT changes."
+}

@@ -1,0 +1,5 @@
+{
+  "task_id": "219",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: A recent disaster may have affected infrastructure in a region. Based on satellite images taken before and after the event, determine the reduction in total building area in pixels.\nA. About 500 pixels\nB. About 1500 pixels\nC. About 2500 pixels\nD. About 3500 pixels"
+}

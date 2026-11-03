@@ -1,0 +1,5 @@
+{
+  "task_id": "216",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: What is the total building area in the image (in square meters)?\nA. About 3000 m^2\nB. About 6000 m^2\nC. About 9000 m^2\nD. About 12000 m^2"
+}

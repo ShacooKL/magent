@@ -1,0 +1,41 @@
+{
+  "audience": "Offline evaluators only. Never supply to diagnostic agents.",
+  "scope": "Small development pilot, not an unbiased benchmark or held-out generalization result. Q93 is heavily tuned; report it separately. Historical source runs have different permissions and tool versions; compare modes within each identical source, not raw performance across tasks.",
+  "source_code": "evolution-lab/official-tool-baseline-v1/runs/qwen35-01/fixed-earth/agent/tools/Statistics.py (relative to Codex root)",
+  "cases": {
+    "case01": {
+      "evidence": ["source-1:69", "source-1:81", "source-1:87", "source-1:99", "source-1:117"],
+      "observed": "87 and 99 pass serialized arrays as strings and return NaN with a file-not-found diagnostic naming the entire bracketed string. 69 is a distinct malformed JSON/validation error. 117 is a valid single-file call at threshold 0.3.",
+      "credit": "Distinguish argument serialization/file-access failure from empty-selection NaN; localize the actual failed invocation. Do not require a specific hypothesis registration format.",
+      "critical_error": "Claim that a correct-array NaN refutes the original stringified-array error, or that one/few dates establish no qualifying pixels in the entire dataset.",
+      "limits": "Does not establish how much the parameter repair alone improves task accuracy; source already contains advisory skill text, so this is not pure de novo discovery."
+    },
+    "case02": {
+      "evidence": ["source-1:15", "source-1:54", "source-1:66", "source-1:67", "source-1:68", "source-1:69", "source-1:79", "source-1:128", "source-1:143"],
+      "observed": "Annual means use four selected date rasters per year. Trend calls return slope -0.6685997009278312 twice. Final submission selects the nearest option and explicitly states quarterly processing. File inventory contains additional dates.",
+      "credit": "Identify unvalidated temporal sampling/coverage as a limitation before blaming the trend tool. Distinguish tool success from representativeness of its inputs and nearest-option selection from verification.",
+      "critical_error": "Claim compute_linear_trend failed despite successful returns, or treat the sampled estimate as a validated all-date annual estimate.",
+      "limits": "Do not claim a particular all-date slope or unique GT-consistent algorithm without computing/checking it."
+    },
+    "case03": {
+      "evidence": ["source-1:16", "source-1:32", "source-1:35", "source-1:38", "source-1:74", "source-1:77", "source-1:110", "source-1:113", "source-1:116"],
+      "observed": "calc_threshold_value_mean is called with ndvi_2021-07-29.tif and lst_2021-07-29.tif. Inspected implementation matches filenames using YYYY_MM_DD_HHMM and returns NaN before raster reading when no matched pair exists. It also masks path2 to [0,1], unsuitable for Kelvin LST even after filename repair. Event 74 returns a conditional NDVI-band mean, not LST. Events 110/113/116 are coordinator dispatch denials.",
+      "credit": "Find tool implementation constraints, distinguishing filename matching and target-value range from pixel absence; distinguish dispatch denial from target-tool failure.",
+      "critical_error": "Infer absent high-NDVI pixels solely from NaN, treat event 74 as mean LST, or claim renaming alone fully fixes the Kelvin-LST calculation.",
+      "limits": "Code inspected is the currently configured official snapshot; historical source identity is not independently guaranteed. Historical stdout may be absent. Do not label its absence a model failure."
+    },
+    "case04": {
+      "evidence": ["source-1:18", "source-1:24", "source-1:27", "source-1:49", "source-1:66"],
+      "observed": "division(a=3667924,b=1478783) returns 0.40316620518854807. Tool contract defines b/a, not a/b. calculate_threshold_ratio independently returns 40.316620518854805.",
+      "credit": "Do not invent a numerator/denominator reversal. Recognize agreement of these calculations while allowing bounded checks of denominator and nodata semantics.",
+      "critical_error": "Call the division arguments reversed without checking the actual tool contract, or claim agreement proves all scientific assumptions valid.",
+      "limits": "This is a specific false-positive control, not a declaration that the entire trajectory is flawless."
+    }
+  },
+  "evaluation": {
+    "primary": "Evidence-supported diagnosis without the case's critical error; report per-case counts, not only one aggregate.",
+    "secondary": ["Key evidence actually inspected", "Unsupported causal claims", "Review corrections versus newly introduced errors", "Completion separately from semantic quality", "Actual requests, token usage and estimated cost"],
+    "scoring": "Record supported/partial/unsupported per case with quoted diagnosis and evidence references. Accept alternative well-supported findings; audit notes are not exhaustive GT. Reviewer-only agreement is not evidence.",
+    "protocol": "Use identical model profile, source inputs and total request cap. Alternate condition order across repetitions. Keep failures in the denominator. Judge anonymized final reports when practical; then inspect reviewer drafts to attribute corrections. Do not retune between repetitions. No significance or skill-utility claim from this small selected sample."
+  }
+}

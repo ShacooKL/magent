@@ -1,0 +1,5 @@
+{
+  "task_id": "214",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: To compare recreational land use across different city zones, identify all tennis courts in three aerial images (A, B, and C), each with a different ground resolution. Rank all detected courts by built-up area (estimated by bounding boxes, GSD: A = 0.12 m/px, B = 0.14 m/px, C = 0.11 m/px).\nA. B > A > C\nB. C > A > B\nC. C > B > A\nD. A > C > B"
+}

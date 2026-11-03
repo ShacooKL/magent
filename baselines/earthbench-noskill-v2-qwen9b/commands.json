@@ -1,0 +1,11 @@
+{
+  "working_directory": "/srv/user/yangxiao/linzw/Codex/magents",
+  "run": "PYTHONNOUSERSITE=1 var/envs/earth-agent-v2/bin/python -u baselines/earthbench-noskill-v2-qwen9b/batch.py --output var/runs/earthbench-baseline-qwen9b-full-01 --workers 16",
+  "status": "PYTHONNOUSERSITE=1 var/envs/earth-agent-v2/bin/python baselines/earthbench-noskill-v2-qwen9b/batch.py --output var/runs/earthbench-baseline-qwen9b-full-01 --status",
+  "notes": [
+    "One attempt per task. No automatic retry or restart.",
+    "Run outputs outside frozen version. GT accessible only to host scoring.",
+    "No skill, no auxiliary code, no generated tools or array schema override.",
+    "All 248 in final denominator; budget-unstarted and unsupported tasks reported explicitly."
+  ]
+}

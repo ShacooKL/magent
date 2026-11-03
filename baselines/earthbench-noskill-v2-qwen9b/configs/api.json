@@ -1,0 +1,15 @@
+{
+  "provider": "openai",
+  "model": "Qwen3.5-9B-local",
+  "base_url": "http://127.0.0.1:8714/v1",
+  "temperature": 0.7,
+  "enable_thinking": false,
+  "api_key_env": "MAGENTS_LOCAL_VLLM_KEY",
+  "api_key": "local-no-auth",
+  "api_transport": {"proxy_mode": "direct", "max_retries": 0},
+  "earth_tools": {
+    "python": "/srv/user/yangxiao/linzw/Codex/magents/var/envs/earth-agent-v2/bin/python",
+    "output_dir": ".earth-tools/output",
+    "timeout_seconds": 300
+  }
+}

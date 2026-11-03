@@ -1,0 +1,5 @@
+{
+  "task_id": "222",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: Following a disaster, authorities are comparing the impact on Region A and Region B. Based on satellite imagery before and after the event, determine which region experienced more severe damage to its buildings.\nA. Area A is more severely affected, since the changed building area is approximately 5,500 pixels, which is larger than the approximately 500 pixels observed in Area B.\nB. Area A is more severely affected, since the changed building area is approximately 3,000 pixels, which is larger than the approximately 500 pixels observed in Area B.\nC. Area B is more severely affected, since the changed building area is approximately 5,500 pixels, which is larger than the approximately 500 pixels observed in Area A.\nD. Area B is more severely affected, since the changed building area is approximately 3,000 pixels, which is larger than the approximately 500 pixels observed in Area A."
+}

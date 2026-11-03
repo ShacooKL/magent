@@ -1,0 +1,37 @@
+{
+  "version": "earthbench-noskill-v1",
+  "purpose": "Frozen no-learning/no-skill EarthBench baseline",
+  "solver": "Sequential coordinator, executor, reviewer; separate append-only role contexts",
+  "policy": {
+    "skill_extraction": false,
+    "skill_retrieval": false,
+    "skill_injection": false,
+    "auxiliary_code": false,
+    "hypothesis_verification": false,
+    "tool_generation": false,
+    "ndvi_array_schema_override": false,
+    "official_tool_count": 104,
+    "max_model_requests": 40,
+    "model": "qwen3.5-flash",
+    "enable_thinking": false
+  },
+  "sources": {
+    "solver": "magents/src/magents snapshot",
+    "adapter_runtime": "python-agent/src/rsagent snapshot",
+    "official_tools": "evolution-lab/official-tool-baseline-v1/runs/qwen35-01/fixed-earth/agent/tools",
+    "questions_and_host_answers": "evolution-lab/official-tool-baseline-v1/runs/qwen35-01/tasks and private",
+    "warning": "Tools are the currently used fixed-earth snapshot, including prior local adaptations. This is NOT a claim of byte-for-byte identity to the upstream EarthAgent release. The original string-or-array schema is preserved."
+  },
+  "external_dependencies": [
+    "Raster datasets are read from the supplied task directory; not copied or version-locked here.",
+    "API credentials are external; no key is included.",
+    "Local environment is shared and recorded in environment-lock.json; future experiments must not mutate it for this version.",
+    "Provider model alias and server defaults are not immutable; log model and usage per run."
+  ],
+  "evaluation": {
+    "ground_truth": "Host-only scoring after final submission; no GT feedback to solver",
+    "report_separately": ["answer correctness", "workflow completion", "tool failures", "requests and API usage"],
+    "prior_q93_array_run": "Diagnostic experiment only; not a run of this frozen original-interface baseline"
+  },
+  "maintenance": "Do not edit this version after sealing. Create v2 for behavior changes. No paid evaluation performed as part of the freeze."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "ndvi-conditioned-mean-lst",
+  "name": "NDVI 条件下的平均地表温度 / NDVI-conditioned mean LST",
+  "when": "需要按 NDVI 阈值筛选像元并计算平均 LST，例如比较植被与非植被区域。Mean land surface temperature selected by an NDVI threshold.",
+  "keywords": ["NDVI", "LST", "mean", "temperature", "vegetated", "forest", "conditional", "平均", "地表温度", "植被", "阈值"],
+  "tools": ["calculate_mean_lst_by_ndvi"],
+  "status": "provisional",
+  "validation": "用户授权暂时入库。仅原题一轮有/无 Skill 配对回放，两组均答对；尚无准确率提升或跨题迁移证据。",
+  "caveat": "参考建议，不是强制规则。确认目标为均值而非最大值或比例，并核对输入及实际工具语义。",
+  "content": "Use calculate_mean_lst_by_ndvi to compute mean LST values for different NDVI threshold conditions when comparing temperature differences between vegetated and non-vegetated areas. This tool directly handles the conditional mean calculation by taking red_paths, nir_paths, lst_paths, ndvi_threshold, and mode parameters ('above' or 'below'), eliminating the need for intermediate threshold segmentation and separate mean calculations that may fail due to NaN values or format issues.",
+  "provenance": "var/runs/q10-learning-01/round-1/candidate.txt; original model-authored content preserved, catalog metadata added by maintainer"
+}

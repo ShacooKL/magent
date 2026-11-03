@@ -1,0 +1,13 @@
+{
+  "max_requests": 40,
+  "max_tokens": 4096,
+  "max_role_requests": 12,
+  "max_plan_requests": 4,
+  "downstream_reserve": 6,
+  "review_rounds": 1,
+  "official_tools": true,
+  "official_only": true,
+  "skill_retrieval": false,
+  "hypothesis_verification": false,
+  "tool_output_chars": 16000
+}

@@ -1,0 +1,5 @@
+{
+  "task_id": "220",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: How much has the building area decreased, in pixels, between successive time points within the same region?\nA. About 3000 pixels\nB. About 5000 pixels\nC. About 8000 pixels\nD. Greater than 10000 pixels"
+}

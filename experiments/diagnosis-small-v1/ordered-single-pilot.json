@@ -1,0 +1,15 @@
+{
+  "version": "ordered-tool-checks-v1-pilot",
+  "profile": "dashscope-qwen35-flash",
+  "modes": ["single"],
+  "max_requests_per_run": 40,
+  "repetitions_per_case_mode": 1,
+  "total_planned_runs": 4,
+  "input_policy": "Only original task and source trace; no evaluator audit notes. Separate pilot, not appended to the earlier comparison.",
+  "cases": [
+    {"id": "case01", "task_id": 93, "source_run": "var/runs/q93-reviewer-replay-01/with-skill"},
+    {"id": "case02", "task_id": 6, "source_run": "var/runs/q4-q10-controls-01/q6-official-only"},
+    {"id": "case03", "task_id": 10, "source_run": "var/runs/q4-q10-controls-01/q10-official-only"},
+    {"id": "case04", "task_id": 8, "source_run": "var/runs/q4-q10-controls-01/q8-official-only"}
+  ]
+}

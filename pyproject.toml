@@ -1,0 +1,8 @@
+[project]
+name = "magents"
+version = "0.1.0"
+requires-python = ">=3.10"
+description = "Minimal evidence-backed multi-agent EarthBench runner"
+
+[tool.setuptools.packages.find]
+where = ["src"]

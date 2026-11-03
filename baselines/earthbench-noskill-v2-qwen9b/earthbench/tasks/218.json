@@ -1,0 +1,5 @@
+{
+  "task_id": "218",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: Based on satellite images taken at two different time points, calculate the area of changed buildings in pixels.\nA. About 5000 pixels\nB. About 15000 pixels\nC. About 25000 pixels\nD. About 35000 pixels"
+}

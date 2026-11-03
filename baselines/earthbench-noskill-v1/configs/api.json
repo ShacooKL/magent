@@ -1,0 +1,14 @@
+{
+  "provider": "openai",
+  "model": "qwen3.5-flash",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "temperature": null,
+  "enable_thinking": false,
+  "api_key_env": "DASHSCOPE_API_KEY",
+  "credentials_file": "/srv/user/yangxiao/linzw/Codex/config/py-agent/credentials.json",
+  "earth_tools": {
+    "python": "/srv/user/yangxiao/linzw/Codex/magents/var/envs/earth-agent/bin/python",
+    "output_dir": ".earth-tools/output",
+    "timeout_seconds": 300
+  }
+}

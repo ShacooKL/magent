@@ -1,0 +1,10 @@
+{
+  "offline_unit_tests": {"engine": 16, "official_only": 2, "passed": 18},
+  "preflight_run": "/srv/user/yangxiao/linzw/Codex/magents/var/runs/baseline-v1-preflight-01",
+  "preflight_status": "preflight_passed",
+  "official_tool_count": 104,
+  "original_union_schema_preserved": true,
+  "skill_and_code_tools_absent": true,
+  "paid_requests": 0,
+  "scope": "Local loading and policy checks only; no new baseline accuracy result"
+}

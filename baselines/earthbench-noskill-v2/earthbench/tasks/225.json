@@ -1,0 +1,5 @@
+{
+  "task_id": "225",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: Based on satellite imagery before and after the natural disaster, determine how many buildings were completely destroyed using pre- and post-disaster satellite images.\nA. None building was completely destroyed.\nB. 1 building was completely destroyed.\nC. 2 buildings were completely destroyed.\nD. 3 buildings were completely destroyed."
+}

@@ -1,0 +1,5 @@
+{
+  "task_id": "245",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: Determine the area change of the destroyed building. (GSD = 0.28 m/px)\nA. About 50\nB. About 150\nC. About 350\nD. About 550"
+}

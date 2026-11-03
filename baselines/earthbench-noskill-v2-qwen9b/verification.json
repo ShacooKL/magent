@@ -1,0 +1,29 @@
+{
+  "offline_tests": 19,
+  "sandbox_all_official_tool_imports": "passed",
+  "sandbox_png_read": "passed, 1213 x 601",
+  "preflight_run": "/srv/user/yangxiao/linzw/Codex/magents/var/runs/baseline-v2-image-preflight-01",
+  "official_tools": 104,
+  "tasks": 248,
+  "data_ready": 248,
+  "paid_requests_at_freeze": 0,
+  "skipped_sidecars": {
+    "9": [
+      "Chicago_2021-04-03_BT10.tif.enp"
+    ],
+    "22": [
+      "2022_06_15_BT_10.tif.enp"
+    ],
+    "204": [
+      ".DS_Store"
+    ]
+  },
+  "no_task_excluded": true,
+  "inherited_from": "earthbench-noskill-v2",
+  "local_protocol": "passed single-tool and full-catalog tests; var/runs/local-qwen-protocol-probe-01/results.json",
+  "local_request_accounting": "passed offline request/usage accounting check",
+  "local_preflight": "passed; var/runs/baseline-local9b-preflight-01",
+  "serving_log": "var/services/qwen35-9b-02/server.log",
+  "context_tokens": 262144,
+  "yarn": false
+}

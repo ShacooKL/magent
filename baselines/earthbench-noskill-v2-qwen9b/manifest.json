@@ -1,0 +1,77 @@
+{
+  "version": "earthbench-noskill-v2-qwen9b",
+  "purpose": "Frozen 248-task baseline; no learning or skill; original tool schemas",
+  "solver": "Sequential coordinator, executor, reviewer; separate append-only role contexts",
+  "policy": {
+    "skill_extraction": false,
+    "skill_retrieval": false,
+    "skill_injection": false,
+    "auxiliary_code": false,
+    "hypothesis_verification": false,
+    "tool_generation": false,
+    "ndvi_array_schema_override": false,
+    "official_tool_count": 104,
+    "max_model_requests": 40,
+    "model": "Qwen3.5-9B-local",
+    "enable_thinking": false,
+    "temperature": 0.7
+  },
+  "sources": {
+    "solver": "magents/src/magents snapshot",
+    "adapter_runtime": "python-agent/src/rsagent snapshot",
+    "official_tools": "evolution-lab/official-tool-baseline-v1/runs/qwen35-01/fixed-earth/agent/tools",
+    "questions_and_host_answers": "evolution-lab/official-tool-baseline-v1/runs/qwen35-01/tasks and private",
+    "warning": "Tools are the currently used fixed-earth snapshot, including prior local adaptations. This is NOT a claim of byte-for-byte identity to the upstream EarthAgent release. The original string-or-array schema is preserved.",
+    "additional_questions": "/srv/user/yangxiao/linzw/Agent/Earth-Agent/benchmark/question.json, evaluation[type=autonomous planning]; dialogs omitted"
+  },
+  "external_dependencies": [
+    "Raster datasets are read from the supplied task directory; not copied or version-locked here.",
+    "Local environment is shared and recorded in environment-lock.json (v2 environment); future experiments must not mutate it for this version.",
+    "Local model weights and serving environment are external to this snapshot; cloud Flash results are not pooled with local 9B results."
+  ],
+  "evaluation": {
+    "ground_truth": "Host-only scoring after final submission; no GT feedback to solver",
+    "report_separately": [
+      "answer correctness",
+      "workflow completion",
+      "tool failures",
+      "requests and API usage"
+    ],
+    "prior_q93_array_run": "Diagnostic experiment only; not a run of this frozen original-interface baseline"
+  },
+  "maintenance": "Do not edit this version after sealing. Create v2 for behavior changes. No paid evaluation performed as part of the freeze.",
+  "parent_version": "earthbench-noskill-v2",
+  "changes_from_v1": [
+    "Added 16 missing tasks from official autonomous-planning question/choices and host-only whitelist answers; retained other 232 tasks unchanged.",
+    "Accept TIFF/JPG/JPEG/PNG without visual-model input; non-image sidecars excluded in separate read-only staged inputs.",
+    "Separate environment with local imports needed by all 104 tool modules.",
+    "16 isolated subprocess workers with host-only shared cost reservations and no automatic retries."
+  ],
+  "budget": {
+    "provider_fee_cny": "0",
+    "gpu_cost": "not_estimated",
+    "max_workers": 16,
+    "max_requests": 9920,
+    "max_api_failures": 50
+  },
+  "serving": {
+    "model_path": "/srv/user/yangxiao/linzw/models/Qwen",
+    "environment": "/srv/user/yangxiao/anaconda3/envs/qwen35_vllm",
+    "vllm": "0.26.1rc1.dev542+gb22afe45a.cu129",
+    "torch": "2.13.0+cu129",
+    "transformers": "5.14.1",
+    "max_model_len": 262144,
+    "yarn": false,
+    "text_only": true,
+    "enable_thinking": false,
+    "tool_call_parser": "qwen3_coder",
+    "gpu": 4,
+    "port": 8714,
+    "service_record": "/srv/user/yangxiao/linzw/Codex/magents/var/services/qwen35-9b-02/service.json"
+  },
+  "changes_from_v2": [
+    "Local Qwen3.5-9B replaces cloud Flash, native 262144 context, no visual input.",
+    "Explicit temperature 0.7; server chat template disables thinking.",
+    "Local request/usage ledger; cloud price calculation disabled. Solver prompts, tool schemas and task set unchanged."
+  ]
+}

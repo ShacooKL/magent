@@ -1,0 +1,22 @@
+{
+  "offline_tests": 19,
+  "sandbox_all_official_tool_imports": "passed",
+  "sandbox_png_read": "passed, 1213 x 601",
+  "preflight_run": "/srv/user/yangxiao/linzw/Codex/magents/var/runs/baseline-v2-image-preflight-01",
+  "official_tools": 104,
+  "tasks": 248,
+  "data_ready": 248,
+  "paid_requests_at_freeze": 0,
+  "skipped_sidecars": {
+    "9": [
+      "Chicago_2021-04-03_BT10.tif.enp"
+    ],
+    "22": [
+      "2022_06_15_BT_10.tif.enp"
+    ],
+    "204": [
+      ".DS_Store"
+    ]
+  },
+  "no_task_excluded": true
+}

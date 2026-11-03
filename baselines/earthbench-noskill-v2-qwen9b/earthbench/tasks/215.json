@@ -1,0 +1,5 @@
+{
+  "task_id": "215",
+  "mode": "autonomous_planning",
+  "question": "EarthBench public task.\n\nQuestion: Based on the following images, GSD for image A is 0.28; GSD for image B is 0.27; GSD for image C is 0.13. Rank them by built-up area.\nA. B > A > C\nB. A > C > B\nC. C > B > A\nD. A > B > C"
+}
